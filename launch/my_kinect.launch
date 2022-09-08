@@ -1,0 +1,17 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find pfa_r2a)/worlds/my_kinect.world"/>
+  </include>
+  <node
+    pkg="pfa_r2a"
+    type="my_edge_detection.py"
+    name="my_edge_detection"
+    output="screen"
+  />
+  <node
+    pkg="pfa_r2a"
+    type="depth_coordinates.py"
+    name="depth_coordinates"
+    output="screen"
+  />
+</launch>
